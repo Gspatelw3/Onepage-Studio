@@ -1,0 +1,61 @@
+
+// # Variables
+// =============================================== */
+
+$mmocd_width: 80% !default;
+$mmocd_min_width: 200px !default;
+$mmocd_max_width: 440px !default;
+$mmocd_transition_duration: 0.3s !default;
+
+$mmspn_transition_duration: 0.3s;
+$mmspn_arrow_size: 10px !default;
+$mmspn_arrow_weight: 2px !default;
+$mmspn_border_opac: 0.15 !default;
+$mmspn_navbar_opac: 0.4 !default;
+$mmspn_arrow_opac: 0.4 !default;
+$mmspn_item_height: 40px !default;
+$mmspn_item_indent: 20px !default;
+$mmspn_line_height: 24px !default;
+$mmspn_panel_offset: 30% !default;
+
+// # Imports
+// =============================================== */
+@import '../../node_modules/mmenu-light/src/mmenu-light';
+
+// # Overrides
+// =============================================== */
+
+.mm-ocd {
+	@include media-breakpoint-down(sm) {
+		font-size: 14px;
+		line-height: 1.2;
+	}
+
+	.header__menu {
+		margin-top: 0;
+		display: block;
+		background: $primary;
+	}
+
+	.header__menu-list {
+		> li {
+			@include media-breakpoint-down(sm){
+				margin-left: 0;
+			}
+
+			&:hover,
+			&.is-active {
+				> a {
+					color: $secondary;
+				}
+			}
+		}
+	}
+
+	&--dark {
+		@include media-breakpoint-down(sm) {
+			color: $white !important;
+			background: $primary !important;
+		}
+	}
+}

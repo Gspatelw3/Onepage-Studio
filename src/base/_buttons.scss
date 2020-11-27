@@ -1,0 +1,9 @@
+
+.btn {
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+
+	&.btn-secondary {
+		color: $white;
+	}
+}

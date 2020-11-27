@@ -1,0 +1,42 @@
+
+// # Variables
+// =============================================== */
+
+// # Imports
+// =============================================== */
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
+// # Overrides
+// =============================================== */
+.slick-slider {
+	.slick-slide {
+		outline: none;
+	}
+}
+
+.slick-dots {
+	margin: 10px 0;
+	display: flex;
+	list-style: none;
+	justify-content: center;
+
+	li {
+		padding: 0 5px;
+
+		button {
+			border: 0;
+			width: 35px;
+			height: 3px;
+			font-size: 0;
+			cursor: pointer;
+			border-radius: 2px;
+			background: $gray-500;
+		}
+
+		&.slick-active {
+			button {
+				background: $secondary;
+			}
+		}
+	}
+}

@@ -1,0 +1,120 @@
+
+.service {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	@include media-breakpoint-down(lg){
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@include media-breakpoint-down(md){
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	@include media-breakpoint-down(sm){
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	&__left,
+	&__right {
+		top: 0;
+		font-size: 0;
+		height: 100%;
+		position: absolute;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	&__left {
+		left: 0;
+		width: calc(50% - 280px);
+		@include media-breakpoint-down(lg){
+			width: calc(50% - 100px);
+		}
+		@include media-breakpoint-down(sm){
+			width: 100%;
+			height: 40%;
+		}
+	}
+
+	&__right {
+		right: 0;
+		width: calc(50% + 280px);
+		@include media-breakpoint-down(lg){
+			width: calc(50% + 100px);
+		}
+		@include media-breakpoint-down(sm){
+			top: auto;
+			bottom: 0;
+			width: 100%;
+			height: 60%;
+		}
+
+		&:before {
+			top: 0;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			background: rgba($secondary, 0.8);
+		}
+	}
+
+	&__content {
+		z-index: 1;
+		background: $gray-200;
+		position: relative;
+		box-shadow: 0 0 20px rgba($black, 0.3);
+
+		h2 {
+			margin-bottom: 28px;
+		}
+	}
+
+	&__content-item {
+		margin-bottom: 20px;
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 10px;
+		}
+
+		strong {
+			display: block;
+			font-size: 22px;
+			font-weight: 600;
+			line-height: 1.2;
+			margin-bottom: 15px;
+			color: $headings-color;
+			@include media-breakpoint-down(md){
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			@include media-breakpoint-down(sm){
+				font-size: 18px;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&__content-icon {
+		width: 52px;
+		padding-top: 5px;
+		@include media-breakpoint-down(sm){
+			width: 40px;
+		}
+	}
+
+	&__content-text {
+		padding-left: 25px;
+		width: calc(100% - 52px);
+		@include media-breakpoint-down(sm){
+			padding-left: 15px;
+			width: calc(100% - 40px);
+		}
+	}
+}
